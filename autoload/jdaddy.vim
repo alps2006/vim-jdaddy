@@ -124,6 +124,7 @@ function! jdaddy#parse(string) abort
     try
       return eval(quoted_keys)
     catch
+      throw "jdaddy: invalid JSON: ".one_line."\n".v:exception
     endtry
   endif
   throw "jdaddy: invalid JSON: ".one_line
